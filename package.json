@@ -1,0 +1,50 @@
+{
+  "name": "pelias-blacklist-stream",
+  "version": "0.0.0-development",
+  "author": "pelias",
+  "description": "Pelias document blacklist stream",
+  "homepage": "https://github.com/pelias/blacklist-stream",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/run.js | tap-spec",
+    "lint": "jshint .",
+    "validate": "npm ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pelias/blacklist-stream.git"
+  },
+  "keywords": [
+    "pelias",
+    "blacklist"
+  ],
+  "bugs": {
+    "url": "https://github.com/pelias/blacklist-stream/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "dependencies": {
+    "pelias-config": "^3.0.2",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.6",
+    "pelias-model": "^5.5.2",
+    "precommit-hook": "^3.0.0",
+    "semantic-release": "^15.9.12",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  },
+  "pre-commit": [
+    "lint",
+    "prune",
+    "validate",
+    "test"
+  ],
+  "release": {
+    "branch": "production",
+    "success": []
+  }
+}
