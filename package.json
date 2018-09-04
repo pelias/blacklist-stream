@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/run.js | tap-spec",
+    "travis": "npm test",
     "lint": "jshint .",
     "validate": "npm ls"
   },
@@ -33,7 +34,6 @@
     "jshint": "^2.9.6",
     "pelias-model": "^5.5.2",
     "precommit-hook": "^3.0.0",
-    "semantic-release": "^15.9.12",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
   },
@@ -44,7 +44,6 @@
     "test"
   ],
   "release": {
-    "branch": "production",
     "success": []
   }
 }
