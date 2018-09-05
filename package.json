@@ -27,7 +27,7 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "pelias-config": "^3.0.2",
+    "pelias-config": "^3.3.0",
     "through2": "^2.0.3"
   },
   "devDependencies": {
