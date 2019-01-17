@@ -23,6 +23,7 @@ const common = {
 const tests = [
   require('./parser.js'),
   require('./stream.js'),
+  require('./loader.js'),
   require('./index.js'),
 ];
 

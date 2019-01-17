@@ -1,7 +1,6 @@
-const config = require('pelias-config');
 const through = require('through2');
 const stream = require('./stream');
-const parser = require('./parser');
+const loader = require('./loader');
 
 function blacklistStream( blacklist ){
 
@@ -19,37 +18,16 @@ function blacklistStream( blacklist ){
 
   // no blacklist was provided via function arguments
 
-  // check pelias-config for a list of blacklist files to load
-  const settings = config.generate();
-
-  // config does not contain the relevant properties
-  // return a no-op passthrough stream
-  if( !settings.imports || !settings.imports.blacklist ){
-    return through.obj();
-  }
-
-  // config does not contain a valid list of files
-  // return a no-op passthrough stream
-  const bl = settings.imports.blacklist;
-  if( !Array.isArray( bl.files ) || bl.files.length === 0 ){
-    return through.obj();
-  }
-
-  // load the blacklist files
-  // note: this throws an exception if a file is not found
-  const blacklists = bl.files.map( filename => parser( filename ) );
-
-  // merge all the blacklists togther
-  var merged = {};
-  blacklists.forEach( b => { for( var k in b ){ merged[k] = b[k]; } } );
+  // attempt to load the blacklist data from the pelias config file
+  blacklist = loader();
 
   // blacklist is empty, return a no-op passthrough stream
-  if( Object.keys( merged ).length === 0 ){
+  if( Object.keys( blacklist ).length === 0 ){
     return through.obj();
   }
 
   // return a blacklist stream based off files specified in pelias-config
-  return stream( merged );
+  return stream( blacklist );
 }
 
 module.exports = blacklistStream;
