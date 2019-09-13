@@ -24,7 +24,7 @@
     "url": "https://github.com/pelias/blacklist-stream/issues"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "dependencies": {
     "pelias-config": "^4.1.0",
