@@ -28,11 +28,11 @@
   },
   "dependencies": {
     "pelias-config": "^4.1.0",
-    "through2": "^2.0.3"
+    "through2": "^3.0.1"
   },
   "devDependencies": {
     "jshint": "^2.9.6",
-    "pelias-model": "^6.0.0",
+    "pelias-model": "^7.0.0",
     "precommit-hook": "^3.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
