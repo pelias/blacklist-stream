@@ -35,7 +35,7 @@
     "pelias-model": "^7.0.0",
     "precommit-hook": "^3.0.0",
     "tap-spec": "^5.0.0",
-    "tape": "^4.9.1"
+    "tape": "^5.0.0"
   },
   "pre-commit": [
     "lint",
