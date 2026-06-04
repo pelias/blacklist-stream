@@ -24,15 +24,15 @@
     "url": "https://github.com/pelias/blacklist-stream/issues"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
-    "pelias-config": "^4.1.0",
-    "through2": "^3.0.1"
+    "pelias-config": "^6.2.0",
+    "through2": "^4.0.2"
   },
   "devDependencies": {
-    "jshint": "^2.9.6",
-    "pelias-model": "^7.0.0",
+    "jshint": "^2.13.6",
+    "pelias-model": "^10.6.0",
     "precommit-hook": "^3.0.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.0.0"
